@@ -1,4 +1,5 @@
 # Make an animation of Instagram's growth over time
+# Blog post on this here: www.relevantmisc.com/ggplot/instagram/2016/02/14/ig-over-time/
 
 # Note: you will need devtools installed for this to run
 # Only need to do this once.
@@ -9,9 +10,9 @@ library(gganimate)
 library(RColorBrewer)
 
 # Read data
-df = read.csv("../LearnD3/data/photo_gps_time.csv", 
+df = read.csv("data/photo_gps_time.csv", 
               header=FALSE, 
-              col.names = c('uid', 'lat', 'lon', 't'))
+              col.names = c('lat', 'lon', 't'))
 
 df <- df %>% filter(-180 < lon, lon < 180)
 
